@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng Ngày Phụ nữ Việt Nam 20/10</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="fireworks-container"></div> <!-- Container cho pháo hoa -->
+    <div class="confetti-container"></div> <!-- Container cho confetti -->
+    <div class="container">
+        <div class="header glow-text">
+            <h1 class="fade-in">Chúc mừng Ngày Phụ nữ Việt Nam 20/10</h1>
+            <p class="fade-in">Tri ân những người phụ nữ tuyệt vời trong cuộc sống của chúng ta.</p>
+        </div>
+        
+        <div class="message bounce glow-text">
+            <h2>Chúc mừng tất cả những người phụ nữ đã và đang mang lại niềm vui, hạnh phúc cho thế giới này!</h2>
+            <p>Chúc các bạn luôn xinh đẹp, hạnh phúc, thành công và mạnh khỏe.</p>
+        </div>
+        
+        <div class="image">
+            <img class="rotate scale-up" src="women_flower.jpg" alt="Phụ nữ và hoa" width="400">
+        </div>
+
+        <div class="button-container">
+            <button onclick="showThanks()" class="neon-button">Nhấn để gửi lời chúc</button>
+        </div>
+
+        <div id="thankyou" class="thank-you hidden">
+            <h2 class="rainbow-text">Cảm ơn các bạn rất nhiều! Chúc mừng 20/10!</h2>
+        </div>
+    </div>
+
+    <canvas id="particleCanvas"></canvas> <!-- Canvas cho hiệu ứng hạt -->
+
+    <script src="./script.js"></script>
+</body>
+</html>

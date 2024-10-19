@@ -1,0 +1,177 @@
+:root {
+    --color-primary: #ff4081;
+    --color-secondary: #ff80ab;
+    --color-accent: #f50057;
+    --color-background: linear-gradient(45deg, #ff80ab, #ff4081, #f50057, #d500f9);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--color-background);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 2;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.header h1, .header p {
+    color: #ffffff;
+    text-shadow: 0 0 8px var(--color-secondary), 0 0 12px var(--color-primary);
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.message h2, .message p {
+    color: #ffffff;
+    text-shadow: 0 0 6px var(--color-primary), 0 0 8px var(--color-secondary);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+.image img {
+    border-radius: 15px;
+    animation: rotateImage 15s infinite linear, scaleUp 6s ease-in-out infinite;
+}
+
+@keyframes rotateImage {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes scaleUp {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Hiệu ứng nút neon */
+.neon-button {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    box-shadow: 
+        0 0 15px var(--color-primary), 
+        0 0 25px var(--color-secondary), 
+        0 0 35px var(--color-primary), 
+        0 0 45px var(--color-secondary);
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.neon-button:hover {
+    box-shadow: 
+        0 0 30px var(--color-primary), 
+        0 0 40px var(--color-secondary), 
+        0 0 50px var(--color-primary), 
+        0 0 60px var(--color-secondary);
+}
+
+.thank-you h2 {
+    font-size: 28px;
+    color: var(--color-primary);
+    text-shadow: 0 0 10px var(--color-secondary), 0 0 15px var(--color-primary);
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+/* Hiệu ứng chữ cầu vồng */
+.rainbow-text {
+    background: linear-gradient(45deg, #ff80ab, #ff4081, #f50057, #d500f9, #651fff, #304ffe, #18ffff, #00e676, #ffd600, #ff6d00);
+    background-size: 400%;
+    background-clip: text; /* Sửa lại dòng này */
+    -webkit-background-clip: text; /* Thêm cho hỗ trợ trình duyệt cũ */
+    color: transparent; /* Đảm bảo chữ hiển thị đúng */
+    animation: rainbowShift 8s ease infinite;
+}
+
+@keyframes rainbowShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Hiệu ứng phát sáng cho text */
+.glow-text {
+    text-shadow: 
+        0 0 10px var(--color-primary), 
+        0 0 20px var(--color-secondary), 
+        0 0 30px var(--color-primary), 
+        0 0 40px var(--color-secondary);
+}
+
+.hidden { display: none; }
+
+/* Pháo hoa */
+.fireworks-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Hiệu ứng hạt */
+#particleCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+}
